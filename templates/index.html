@@ -1,25 +1,14 @@
 {%extends "base.html"%}
 
+{%block css%} <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> {%endblock%}
+{%block librerias%} {%endblock%}
+
+{%block main%}
+<h1>probando estilos heredadso de base</h1>
+<p>esta parte esta desde base html</p>
+{%endblock%}
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>{%block tittle%}{{ super() }} - completado{%endblock%}</title><!--super es para heredar cosas, hasta css y js-->
-</head>
-<body>
-    <h1>hola mundo desde index</h1>
-
-
-    {%block main%}
-    <p>esta parte esta desde base html</p>
-    {%endblock%}
-
-
-</body>
-<script src="{{ url_for('static', filename='js/main.js') }}"></script>
-</html>
+{%block javascript%}<script src="{{ url_for('static', filename='js/main.js') }}"></script>{%endblock%}
+ 
