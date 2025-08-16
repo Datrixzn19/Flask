@@ -1,16 +1,16 @@
-from flask import Flask, render_template, url_for 
-from markupsafe import escape
+from flask import Flask 
+
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/")#esta es la ruta base 
 def index():
-    return render_template("index.html")
+    return "Esta es la pagina principal "
 
-@app.route("/register")
-def register():
-    return render_template("auth/register.html")
+@app.route("/usuario/<name>")#ruta personalizada
+def saludo(name):
+    return f"Bienvenido, {name}"
 
-@app.route("/prices")
-def prices():
-    return render_template("prices.html")
+
+if __name__ == '__main__':
+    app.run(debug=True)
