@@ -1,0 +1,43 @@
+/*para base.html*/
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #000000;
+    color: aqua;
+
+}
+
+nav, footer{
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+nav.navbar.bg-body-tertiary {
+    background-color: #000000 !important;
+
+}
+nav.navbar{
+    color: #ffffff !important;
+}
+
+
+nav.navbar .navbar-brand,
+nav.navbar .nav-link,
+nav.navbar .dropdown-item {
+    color: #ffffff !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+main{
+    background-color: #141414;
+    color: #ffffff;
+}
