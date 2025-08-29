@@ -1,5 +1,6 @@
 .branding{
-  background-color: #000000;
+  background-color: #f8e9e9;
+  width: 100%;
 }
 .title{
     color: var(--color-principal-text);
@@ -40,7 +41,7 @@ img {
   filter: blur(10px);
   filter: brightness(1.5);   
   filter: contrast(200%); 
-  width: 90%;
+  width: 70%;
   height: auto;
   margin: 0 auto ;
   display: block;
@@ -64,18 +65,18 @@ img {
 
 /* Tarjetas de presentacion de productos */
 .container {
-  width: 100%;
+  width: 95%;
 
-  margin: 0;
+  margin: 0px auto;
   padding: 0;
 }
 .card {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100vw; 
+  width: 95%; 
   box-sizing: border-box;
-  margin: 10px 0;
+  margin: 10px auto;
   height: auto;
   padding:0; 
 }
@@ -133,7 +134,7 @@ img {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100vw; 
+  width: 99vw; 
   box-sizing: border-box;
   margin: 10px 0;
   height: auto;
