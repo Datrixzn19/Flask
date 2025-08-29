@@ -1,24 +1,79 @@
 /*para base.html*/
+
+/*Movil primero */
 body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: #000000;
+    background: #141414;
     color: #ffffff;
-
+}
+main{
+    color: #ffffff;
+}
+footer{
+    background-color: #000000;
 }
 
 
 
 
 
+/* desktop */
+
+@media (min-width: 1200px) {
 
 
 
 
 
 
-main{
-    background-color: #141414;
-    color: #ffffff;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

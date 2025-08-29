@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/themes.css') }}"><!--var-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     
+  <!--GG Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asimovian&family=Londrina+Shadow&family=Nata+Sans:wght@100..900&family=Nosifer&display=swap" rel="stylesheet">
+
+
     {% block css%} {% endblock %}
     <title>{% block tittle%}BASE{% endblock %}</title>
 </head>
@@ -15,7 +21,7 @@
 <!--NAVEGACION-->
 <nav class="navbar navbar-expand-lg" style="background-color: #000000;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{{ url_for('main.index') }}" style="color: #ffffff;">INICIO</a>
+    <a class="navbar-brand" href="{{ url_for('main.index') }}" style="color: #ffffff;">Atom.</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon" style="filter: invert(100%);"></span>
     </button>
