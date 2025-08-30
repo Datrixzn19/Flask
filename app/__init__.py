@@ -1,16 +1,33 @@
-from flask import Flask 
-from .routes.main import main 
-from .routes.auth import auth 
-
+from flask import Flask
 import os
 from dotenv import load_dotenv
+from .db.models import init_db
 
-load_dotenv()  # carga el .env en os.environ
+# Cargar variables de entorno
+load_dotenv()
+
+# Importa todos los blueprints
+from .routes.main import main
+from .routes.auth import auth
+from .routes.productos import productos
+from .products import products_bp  # asegúrate que products_bp esté bien definido en app/products.py
 
 def create_app():
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = os.environ.get("FLASK_SECRET_KEY", "dev")  # 'dev' si no encuentra la variable
-    print("Secret Key cargada:", app.config['SECRET_KEY']) 
+    app.config['SECRET_KEY'] = os.environ.get("FLASK_SECRET_KEY", "dev")
+    print("Secret Key cargada:", app.config['SECRET_KEY'])
+
+    # Configuración de la base de datos
+    app.config["DATABASE"] = os.path.join(app.instance_path, "database.db")
+    os.makedirs(app.instance_path, exist_ok=True)  # asegurarse que la carpeta instance exista
+
+    # Inicializar DB
+    init_db(app)
+
+    # Registrar blueprints
     app.register_blueprint(main)
     app.register_blueprint(auth)
+    app.register_blueprint(productos)
+    app.register_blueprint(products_bp, url_prefix="/products")  # 🔑 importante
+
     return app

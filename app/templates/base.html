@@ -28,13 +28,14 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ url_for('main.about') }}" style="color: #ffffff;">About</a>
+          <!--nombre del blueprint + nombre de la funcion en la ruta-->
+          <a class="nav-link active" aria-current="page" href="c" style="color: #ffffff;">About</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('auth.register') }}" style="color: #ffffff;">Registrarse</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" style="color: #ffffff;">Pricing</a>
+          <a class="nav-link" href="{{ url_for('productos.products') }}" style="color: #ffffff;">Productos</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #ffffff;">
