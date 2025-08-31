@@ -14,11 +14,64 @@ body{
 main{
     color: #ffffff;
 }
-footer{
-    background-color: #000000;
+
+
+
+
+/* Footer negro puro con texto blanco */
+.footer-dark {
+  background-color: #000000 !important; /* vence bg-body-tertiary */
+  color: #fff !important;            /* vence text-muted y hereda */
 }
 
+/* Asegurar que todo el contenido herede el color blanco */
+.footer-dark, 
+.footer-dark * {
+  color: #fff; /* herencia para .text-reset, headings, p, i, etc. */
+}
 
+/* Enlaces: blanco y leve cambio al hover */
+.footer-dark a,
+.footer-dark a.text-reset {
+  color: #fff !important;
+  text-decoration: none;
+}
+.footer-dark a:hover,
+.footer-dark a:focus {
+  color: #ccc !important; /* opcional: pequeño contraste al hover */
+}
+
+/* Íconos de Font Awesome en blanco */
+.footer-dark i[class^="fa"],
+.footer-dark i[class*=" fa"] {
+  color: #fff !important;
+}
+
+/* Bordes y separadores en tono claro sobre fondo negro */
+.footer-dark .border-bottom,
+.footer-dark .border-top,
+.footer-dark hr {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Corrige el área de copyright (antes tenía inline rgba(0,0,0,0.05)) */
+.footer-dark .footer-copy {
+  background-color: #000000 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Si usas badges, buttons o inputs dentro del footer y quieres mantener blanco: */
+.footer-dark .badge,
+.footer-dark .btn-link {
+  color: #fff !important;
+}
+
+/* (Opcional) Asegurar títulos y párrafos, por si hay reglas más específicas */
+.footer-dark h1, .footer-dark h2, .footer-dark h3,
+.footer-dark h4, .footer-dark h5, .footer-dark h6,
+.footer-dark p, .footer-dark span, .footer-dark small {
+  color: #fff !important;
+}
 
 
 
