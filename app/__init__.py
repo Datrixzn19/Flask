@@ -6,11 +6,10 @@ from .db.models import init_db
 # Cargar variables de entorno
 load_dotenv()
 
-# Importa todos los blueprints
+# Importar blueprints
 from .routes.main import main
 from .routes.auth import auth
-from .routes.productos import productos
-from .products import products_bp  
+from .products.routes import products_bp   # ✅
 
 def create_app():
     app = Flask(__name__)
@@ -19,7 +18,7 @@ def create_app():
 
     # Configuración de la base de datos
     app.config["DATABASE"] = os.path.join(app.instance_path, "database.db")
-    os.makedirs(app.instance_path, exist_ok=True)  # se asegura que la carpeta instance exista
+    os.makedirs(app.instance_path, exist_ok=True)  
 
     # Inicializar DB
     init_db(app)
@@ -27,7 +26,6 @@ def create_app():
     # Registrar blueprints
     app.register_blueprint(main)
     app.register_blueprint(auth)
-    app.register_blueprint(productos)
-    app.register_blueprint(products_bp, url_prefix="/products")  
+    app.register_blueprint(products_bp, url_prefix="/products")  # ✅
 
     return app

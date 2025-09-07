@@ -1,0 +1,14 @@
+[
+    {
+        "id": 31,
+        "nombre": "conmputadora asus rog 6",
+        "cantidad": "12",
+        "precio": "2000"
+    },
+    {
+        "id": 32,
+        "nombre": "parlante sony e3 ",
+        "cantidad": "12",
+        "precio": "10"
+    }
+]
