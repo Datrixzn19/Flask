@@ -10,5 +10,11 @@
         "nombre": "parlante sony e3 ",
         "cantidad": "12",
         "precio": "10"
+    },
+    {
+        "id": 33,
+        "nombre": "lenovo ideapad 6",
+        "cantidad": "12",
+        "precio": "800"
     }
 ]
