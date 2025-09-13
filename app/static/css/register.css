@@ -23,6 +23,7 @@ label{
 input{
     display: block;
     margin: 0px auto;
+    height: 35px;
     width: 400px;
     border-radius: 20px;
 }
