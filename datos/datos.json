@@ -16,5 +16,11 @@
         "nombre": "lenovo ideapad 6",
         "cantidad": "12",
         "precio": "800"
+    },
+    {
+        "id": 34,
+        "nombre": "sony e3",
+        "cantidad": "3",
+        "precio": "12"
     }
 ]
