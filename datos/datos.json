@@ -22,5 +22,11 @@
         "nombre": "sony e3",
         "cantidad": "3",
         "precio": "12"
+    },
+    {
+        "id": 35,
+        "nombre": "audifonos jbl ite",
+        "cantidad": "23",
+        "precio": "33"
     }
 ]
