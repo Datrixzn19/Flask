@@ -1,0 +1,22 @@
+{%extends "base.html"%}
+
+{% block css%}<link rel="stylesheet" href="{{ url_for('static', filename='css/XXXXXXX.css') }}">{% endblock %}
+{% block tittle%}Dashboard{% endblock %}
+
+{% block main%}
+
+<h1>HOLA {{ current_user.nombre}}</h1>
+
+% if current_user.is_authenticated %}
+    <p>Bienvenido, {{ current_user.nombre }}!</p> 
+    <a href="{{ url_for('auth.logout') }}">Cerrar Sesión</a>
+{% else %}
+    <a href="{{ url_for('auth.login') }}">Iniciar Sesión</a>
+{% endif %}
+
+
+{% endblock %}
+
+
+
+{% block js%} {% endblock %}

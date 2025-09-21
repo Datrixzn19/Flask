@@ -10,11 +10,10 @@ db_config = {
     'database': 'proyecto_desarrollo_web',
 }
 
-def get_db_conection():
+def get_db_connection():
     try:
-        #intentara la coneccion con los datos de db_config
         conn = mysql.connector.connect(**db_config)
         return conn
     except mysql.connector.Error as err:
-        print(f'Ha ocurrido un error al intentar la conexion a la DB --> {err}')
-        return None 
+        print(f'Ha ocurrido un error al intentar la conexion a la DB: {err}')
+        return None

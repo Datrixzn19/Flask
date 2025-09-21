@@ -4,7 +4,7 @@ import os, json
 
 products_bp = Blueprint("products", __name__)
 
-# Index
+        # GESTION DE PRODUCTOS 
 @products_bp.route("/", methods=["GET", "POST"])
 def index():
     db = get_db(current_app)

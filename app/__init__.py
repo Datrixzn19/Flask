@@ -3,6 +3,9 @@ import os
 from dotenv import load_dotenv
 from .db.models import init_db
 
+#para mysql 
+from flask_login import LoginManager
+from app.models.user import Usuario #la calse usuario 
 
 
 # Cargar variables de entorno
@@ -29,6 +32,20 @@ def create_app():
     app.register_blueprint(main)
     app.register_blueprint(auth)
     app.register_blueprint(products_bp, url_prefix="/products")  # 
+
+
+#MYSQL 
+    #Config Flask-Login
+    login_manager = LoginManager()
+    login_manager.init_app(app)
+    login_manager.login_view = 'auth.login' #ruta a la que va si no se estas logeado 
+    login_manager.login_message = "Por favor inicia secion para acceder a esta pagina"
+    @login_manager.user_loader
+    def load_user(user_id): 
+        return Usuario.get_by_id(user_id)#nuestro metodo get_by_id creado
+    
+
+    
 
 
 
