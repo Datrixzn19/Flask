@@ -1,10 +1,23 @@
 
 {%extends "base.html"%}
 
-{% block css%}<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">{% endblock %}
+{% block css%}<link rel="stylesheet"href="{{ url_for('static', filename='css/register.css') }}">{% endblock %}
 {% block tittle%}Registrarse{% endblock %}
 
 {% block main%}
+
+{% with mensajes = get_flashed_messages() %}
+    {% if mensajes %}
+        <ul>
+            {%for msj in mensajes%}
+                <div class="alert alert-info" role="alert">
+                    {{ msj }}                   
+                </div> 
+            {%endfor%}
+        </ul>
+    {% endif %}
+{% endwith %}
+
 
 <div class="contenedor">
     <h1>Registrarse</h1>
