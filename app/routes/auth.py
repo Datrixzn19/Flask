@@ -54,35 +54,36 @@ def login():
 
 
 
-
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
         username = request.form['name']
         email = request.form['email']
         password = request.form['password'] 
-        conf_password = request.form['conf_password'] 
+        conf_password = request.form['conf_passwordss'] 
 
-        """username = request.form['name'].strip() otra version de lo mismo que esta arriba 
-        email = request.form['email'].strip().lower()
-        password = request.form['password']
-        conf_password = request.form['conf_password']`""" 
-
-      
+        # Verificar si las contraseñas coinciden
         if password != conf_password:
-            flash('Las contraseñas no coinciden', 'error')
-            print('Las contraseñas no coinciden')
+            msj = 'Las contraseñas no coinciden'
+            flash(msj)
+            
             return render_template('auth/register.html')
-        
+
+        # Verificar si ya existe un usuario con ese correo
+        usuario_existente = Usuario.query.filter_by(email=email).first()
+        if usuario_existente:
+            flash('El correo ya está en uso, intenta con otro', 'error')
+            return render_template('auth/register.html')
+
+        # Crear usuario (solo si no existe)
         if Usuario.crear_usuario(username, email, password):
-            flash('Cuenta creada con exito, ya puedes iniciar sesion', 'success')
-            print('Cuenta creada con exito, ya puedes iniciar sesion')
-            return redirect(url_for('auth.dashboard'))  #cuando cree la cuenta va directo al dashboard
+            flash('Cuenta creada con éxito, ya puedes iniciar sesión', 'success')
+            return redirect(url_for('auth.dashboard'))
         else:
-            flash('Error al crear la cuenta, las credenciales podrian estar ocupadas', 'error')
-            print('Error al crear la cuenta, las credenciales podrian estar ocupadas')
-    
-    return render_template('auth/register.html')  
+            flash('Error al crear la cuenta', 'error')
+
+    return render_template('auth/register.html')
+ 
 
 @auth.route('/logout')
 def logout():

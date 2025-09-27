@@ -9,29 +9,36 @@ class Usuario(UserMixin):
         self.email = email
 
             #CREAR USUARIO 
-    @staticmethod #para no necesitar instanciar la clase
+    @staticmethod
     def crear_usuario(nombre, email, password):
-        hashed_password = generate_password_hash(password) #mayor seguridad
+        email = email.strip().lower()  # normalizar
+        hashed_password = generate_password_hash(password)
 
         conn = get_db_connection()
         if conn:
-            cursor = conn.cursor()
+            cursor = conn.cursor(dictionary=True)
             try:
-                #los % en las consultas son placeholders 
-                #reemplaza estos %s con los valores del segundo parametro de execute()
-                query = "INSERT INTO usuarios (nombre, email, password) VALUES (%s, %s, %s)"
-                cursor.execute(query, (nombre, email, hashed_password))
+                # Verificar si ya existe el correo
+                query_check = "SELECT id FROM usuarios WHERE email = %s"
+                cursor.execute(query_check, (email,))
+                if cursor.fetchone():
+                    print("El correo ya existe")
+                    return False
+
+                # Insertar nuevo usuario
+                query_insert = "INSERT INTO usuarios (nombre, email, password) VALUES (%s, %s, %s)"
+                cursor.execute(query_insert, (nombre, email, hashed_password))
                 conn.commit()
                 return True
             except Exception as ex:
-                print(f"error al crear usuario {ex}")
-                conn.rollback() #deshacer cambios si algo falla 
+                print(f"Error al crear usuario: {ex}")
+                conn.rollback()
                 return False
             finally:
                 cursor.close()
                 conn.close()
-        return False #en caso de no poder conectarse
-           
+        return False
+            
 
             #VALIDAR CREDENCIALES 
 
@@ -44,7 +51,7 @@ class Usuario(UserMixin):
         if conn:
             cursor = conn.cursor(dictionary=True)
             try:            
-                query = "SELECT id, nombre, email, password FROM usuarios WHERE email = %s"  # AQUI CAMBIO
+                query = "SELECT id, nombre, email, password FROM usuarios WHERE email = %s"  
                 cursor.execute(query, (email,))
                 user_data = cursor.fetchone()
                 if user_data and check_password_hash(user_data['password'], password):
