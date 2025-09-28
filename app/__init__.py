@@ -5,7 +5,7 @@ from .db.models import init_db
 
 #para mysql 
 from flask_login import LoginManager
-from app.models.user import Usuario #la calse usuario 
+from app.models.user import Usuario #la clase usuario 
 
 
 # Cargar variables de entorno
@@ -14,7 +14,8 @@ load_dotenv()
 # Importar blueprints
 from .routes.main import main
 from .routes.auth import auth
-from .products.routes import products_bp   # sqlite
+from .products.routes import products_bp   # sqlite orm 
+from .routes.prods_bp import prods_bp #crud mysql
 
 def create_app():
     app = Flask(__name__)
@@ -31,7 +32,8 @@ def create_app():
     # Registrar blueprints
     app.register_blueprint(main)
     app.register_blueprint(auth)
-    app.register_blueprint(products_bp, url_prefix="/products")  # 
+    app.register_blueprint(products_bp, url_prefix="/products")  # el crud con orm
+    app.register_blueprint(prods_bp, url_prefix='/prods')  # el crud con mysql 
 
 
 #MYSQL 

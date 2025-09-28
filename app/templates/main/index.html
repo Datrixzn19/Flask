@@ -8,7 +8,10 @@
     <div class="branding"><h1 class="title">DIJITAL ATOM</h1>
         <H2 class="subtitle">Conecta con la calidad</H2>
         <img src="{{ url_for('static', filename='assets/fondo-teclado-home.png') }}" alt="Imagen de fondo">
-        <button type="button" class="btn btn-outline-primary" onclick='window.location.href="{{url_for("products.index")}}"'>Productos</button>
+        <button type="button" class="btn btn-outline-primary" onclick='window.location.href="{{url_for("products.index")}}"'>Productos(ORM)</button> 
+        <button type="button" class="btn btn-outline-primary" onclick='window.location.href="{{ url_for("prods.listar") }}"'>
+          Productos (MySQL)
+        </button>
 
   
         <br><br><br>
