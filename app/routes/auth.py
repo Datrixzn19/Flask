@@ -44,14 +44,7 @@ def register():
         username = request.form['name']
         email = request.form['email'].strip().lower()
         password = request.form['password'] 
-        conf_password = request.form['conf_passwordss'] 
-
-        # Verificar si las contraseñas coinciden
-        if password != conf_password:
-            msj = 'Las contraseñas no coinciden'
-            flash(msj, 'error')
-            return render_template('auth/register.html')
-
+     
         # Verificar si ya existe un usuario con ese correo
         if UsuarioDB.verificar_email_existente(email):
             flash('El correo ya está en uso, intenta con otro', 'error')
