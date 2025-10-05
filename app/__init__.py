@@ -28,4 +28,11 @@ def create_app():
     os.makedirs(app.instance_path, exist_ok=True)
 
     # Registrar blueprints
-    app.register
+    app.register_blueprint(main)
+    app.register_blueprint(auth)
+    app.register_blueprint(prods_bp, url_prefix='/prods')
+
+    # Inicializar Flask-Login después de crear la app
+    login_manager.init_app(app)
+
+    return app
