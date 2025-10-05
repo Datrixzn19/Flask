@@ -99,8 +99,13 @@ body {
   text-align: center;
   padding: 20px;
 }
-
-.descripcion {
+descripcion-b{
+ color: white;
+}
+.descripcion-w{
+  color: black;
+}
+.descripcion{
   font-size: clamp(1rem, 2vw, 1.5rem);
   line-height: 1.4;
   padding: 20px;

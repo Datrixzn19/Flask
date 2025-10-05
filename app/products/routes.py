@@ -1,4 +1,4 @@
-#sqlite 
+"""#sqlite 
 from flask import Blueprint, render_template, request, redirect, url_for, current_app
 from app.db.models import get_db
 import os, json
@@ -107,3 +107,4 @@ def eliminar(id):
             json.dump(productos_json, f, indent=4, ensure_ascii=False)
 
     return redirect(url_for("products.index"))
+"""

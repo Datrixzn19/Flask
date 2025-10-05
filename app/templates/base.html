@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/themes.css') }}"><!--var-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     
-  <!--GG Fonts-->
+  <!--Google Fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Asimovian&family=Londrina+Shadow&family=Nata+Sans:wght@100..900&family=Nosifer&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
           <a class="nav-link active" aria-current="page" href="{{ url_for('main.about') }}" style="color: #ffffff;">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('products.index') }}" style="color: #ffffff;">Productos</a>
+          <a class="nav-link" href="{{ url_for('prods.listar') }}" style="color: #ffffff;">Productos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('auth.register') }}" style="color: #ffffff;">Registrarse</a>
@@ -42,9 +42,9 @@
             Contacto
           </a>
           <ul class="dropdown-menu" style="background-color: #000000;">
-            <li><a class="dropdown-item" href="#" style="color: #ffffff;">Whatsapp</a></li>
-            <li><a class="dropdown-item" href="#" style="color: #ffffff;">Facebook</a></li>
-            <li><a class="dropdown-item" href="#" style="color: #ffffff;">Instagram</a></li>
+            <li><a class="dropdown-item" href="http://wa.me/0994532694" style="color: #ffffff;">Whatsapp</a></li>
+            <li><a class="dropdown-item" href="https://www.facebook.com/" style="color: #ffffff;">Facebook</a></li>
+            <li><a class="dropdown-item" href="https://www.instagram.com/" style="color: #ffffff;">Instagram</a></li>
           </ul>
         </li>
       </ul>
@@ -66,17 +66,16 @@
 
 <!-- Footer -->
 <footer class="text-center text-lg-start footer-dark">
-  <!-- Section: Social media -->
   <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-    <!-- Left -->
+    
+    
     <div class="me-5 d-none d-lg-block">
       <span>Conecta con la calidad</span>
     </div>
-    <!-- Left -->
- 
-    <!-- Right -->
+  
+    
     <div>
-      <a href="" class="me-4 text-reset">
+      <a href="#" class="me-4 text-reset">
         <i class="fab fa-facebook-f"></i>
       </a>
       <a href="" class="me-4 text-reset">
@@ -95,18 +94,17 @@
         <i class="fab fa-github"></i>
       </a>
     </div>
-    <!-- Right -->
+   
   </section>
-  <!-- Section: Social media -->
 
-  <!-- Section: Links  -->
+
   <section class="">
     <div class="container text-center text-md-start mt-5">
-      <!-- Grid row -->
+     
       <div class="row mt-3">
-        <!-- Grid column -->
+      
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <!-- Content -->
+         
           <h6 class="text-uppercase fw-bold mb-4">
             <i class="fas fa-gem me-3"></i>Dijital Atom
           </h6>
@@ -114,45 +112,37 @@
             Buscando productos tecnológicos de la mejor calidad?<br> Tu búsqueda ha terminado aqui.
           </p>
         </div>
-        <!-- Grid column -->
 
-        <!-- Grid column -->
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
+        
           <h6 class="text-uppercase fw-bold mb-4">Productos</h6>
-          <p><a href="#!" class="text-reset">Laptops</a></p>
-          <p><a href="#!" class="text-reset">Teclados</a></p>
-          <p><a href="#!" class="text-reset">Audifonos</a></p>
-          <p><a href="#!" class="text-reset">Parlantes</a></p>
+          <p><a href="#" class="text-reset">Laptops</a></p>
+          <p><a href="#" class="text-reset">Teclados</a></p>
+          <p><a href="#" class="text-reset">Audifonos</a></p>
+          <p><a href="#" class="text-reset">Parlantes</a></p>
         </div>
-        <!-- Grid column -->
 
-        <!-- Grid column -->
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">Links útiles</h6>
           <p><a href="#!" class="text-reset">Productos</a></p>
           <p><a href="#!" class="text-reset">Cuenta</a></p>
           <p><a href="#!" class="text-reset">Ordenes</a></p>
           <p><a href="#!" class="text-reset">Ayuda</a></p>
         </div>
-        <!-- Grid column -->
 
-        <!-- Grid column -->
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">Contáctanos</h6>
           <p><i class="fas fa-home me-3"></i> Loja, Ecuador</p>
           <p><i class="fas fa-envelope me-3"></i>dijitalaom@contact.com</p>
-          <p><i class="fas fa-phone me-3"></i> + 593 234 567 88</p>
-          <p><i class="fas fa-print me-3"></i> + 593 234 567 89</p>
+          <p><i class="fas fa-phone me-3"></i> +593 99 453 694</p>
+          <p><i class="fas fa-print me-3"></i> +593 234 567 89</p>
         </div>
-        <!-- Grid column -->
+
       </div>
-      <!-- Grid row -->
+  
     </div>
   </section>
-  <!-- Section: Links  -->
+  
 
   
   <div class="text-center p-4 footer-copy">

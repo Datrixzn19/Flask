@@ -1,59 +1,62 @@
+{% extends "base.html" %}
 
-{%extends "base.html"%}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+{% endblock %}
 
-{% block css%}<link rel="stylesheet"href="{{ url_for('static', filename='css/register.css') }}">{% endblock %}
-{% block tittle%}Registrarse{% endblock %}
+{% block tittle %}Registrarse{% endblock %}
 
-{% block main%}
+{% block main %}
 
 {% with mensajes = get_flashed_messages() %}
     {% if mensajes %}
         <ul>
-            {%for msj in mensajes%}
+            {% for msj in mensajes %}
                 <div class="alert alert-info" role="alert">
                     {{ msj }}                   
                 </div> 
-            {%endfor%}
+            {% endfor %}
         </ul>
     {% endif %}
 {% endwith %}
 
-
 <div class="contenedor">
     <h1>Registrarse</h1>
 
+    <form action="" method='POST' id="registerForm">
+        <div class="form-group">
+            <label for="name">Nombre</label><br>
+            <input type="text" id='name' name='name' required style="color: #000;">
+            <div class="error-message" id="name-error"></div>
+            <br>
+        </div>
 
+        <div class="form-group">
+            <label for="email">Email</label><br>
+            <input type="email" id='email' name='email' required style="color: #000;">
+            <div class="error-message" id="email-error"></div>
+            <br>
+        </div>
 
-    <form action="" method='POST'>
-        <label for="name">Nombre</label><br>
-        <input type="text" id='name' name='name' required>
-        <br>
+        <div class="form-group">
+            <label for="password">Contraseña</label><br>
+            <input type="password" id='password' name='password' required style="color: #000;">
+            <br>
+        </div>
 
-        <label for="email">Email</label><br>
-        <input type="email" id='email' name='email' required>
-        <br>
-
-        <label for="password">Contraseña</label><br>
-        <input type="password" id='password' name='password' required>
-        <br>
-
-        <label for="conf_password">Repite la contraseña</label><br>
-        <input type="password" id='conf_password' name='conf_password' required>
-        <br>
+        <div class="form-group">
+            <label for="conf_password">Repite la contraseña</label><br>
+            <input type="password" id='conf_password' name='conf_password' required style="color: #000;">
+            <div class="error-message" id="conf_password-error"></div>
+            <br>
+        </div>
         
-        
-        <button class=" button btn btn-primary" type="submit">Registrarme</button>
+        <button class="button btn btn-primary" type="submit">Registrarme</button>
         <span>Ya tienes una cuenta? <a href="{{ url_for('auth.login') }}">Inicia sesion</a> </span>
-      
-
     </form>
-
-
 </div>
-
-
-    
 {% endblock %}
 
-
-{% block js%} {% endblock %}
+{% block js %}
+<script src="{{ url_for('static', filename='js/register.js') }}"></script>
+{% endblock %}

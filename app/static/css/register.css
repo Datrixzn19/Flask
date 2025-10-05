@@ -3,13 +3,17 @@
 
     width: 100%;
     margin: 0px auto;
+    background-color: rgba(0, 0, 0, 0.214);
 }
-
+.registerForm{
+    background-color: #fff;
+}
 h1{
     text-align: center;   
     width: 100%;
     margin-top: 20px;
     margin-bottom: 40px;
+    color: white;
 }
 
 label{
@@ -26,6 +30,7 @@ input{
     height: 35px;
     width: 400px;
     border-radius: 20px;
+    color: black !important;
 }
 
 
@@ -51,7 +56,11 @@ span{
 .contenedor{
 
     width: 60%;
+    background-color: rgba(0, 0, 0, 0.214);
 
+}
+input{
+    color: black;
 }
 
 

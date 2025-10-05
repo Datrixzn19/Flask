@@ -20,7 +20,7 @@
 {% endwith %}
 
 <div class="contenedor">
-    <h1>Ingresa tus credenciales</h1>
+    <h1 style="color: white;">Ingresa tus credenciales</h1>
 
 
 
@@ -49,4 +49,6 @@
 {% endblock %}
 
 
-{% block js%} {% endblock %}
+{% block js%}
+ <link rel="stylesheet"href="{{ url_for('static', filename='js/login.js') }}">
+ {% endblock %}

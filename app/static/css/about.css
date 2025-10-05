@@ -4,3 +4,54 @@ h1{
     background-color: var(--color-principal);
 }
 */
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.about-header h1 {
+
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.about-header p {
+  
+    font-size: 1.1rem;
+}
+
+.about-section {
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+.about-section h2 {
+
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.about-section p {
+    
+    margin-bottom: 15px;
+}
+
+.about-section ul {
+   
+    padding-left: 20px;
+}
+
+.about-section li {
+    margin-bottom: 8px;
+}

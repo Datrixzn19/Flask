@@ -8,7 +8,7 @@
     <div class="branding"><h1 class="title">DIJITAL ATOM</h1>
         <H2 class="subtitle">Conecta con la calidad</H2>
         <img src="{{ url_for('static', filename='assets/fondo-teclado-home.png') }}" alt="Imagen de fondo">
-        <button type="button" class="btn btn-outline-primary" onclick='window.location.href="{{url_for("products.index")}}"'>Productos(ORM)</button> 
+        <button style="margin-bottom: 10px;" type="button" class="btn btn-outline-primary" onclick='window.location.href="{{url_for("products.index")}}"'>Productos(ORM)</button> 
         <button type="button" class="btn btn-outline-primary" onclick='window.location.href="{{ url_for("prods.listar") }}"'>
           Productos (MySQL)
         </button>
@@ -24,22 +24,22 @@
 <div class="container">
     <div class="card elementos-w">
       <h3 class="producto">Mouses</h3>
-      <span class="descripcion">Todo tipo de mouses de las mejores marcas, con DPI ajustable, clicks de millones de pulsaciones de vida util, etc.</span>
+      <span class="descripcion descripcion-w">Todo tipo de mouses de las mejores marcas, con DPI ajustable, clicks de millones de pulsaciones de vida util, etc.</span>
     </div>
 
     <div class="card elementos-b">
       <h3 class="producto">Audifonos</h3>
-      <span class="descripcion">Audifonos alambricos, inalambricos, de diadema, con sonido envolvente y microfono incorporado</span>
+      <span class="descripcion descripcion-b">Audifonos alambricos, inalambricos, de diadema, con sonido envolvente y microfono incorporado</span>
     </div>
 
     <div class="card elementos-w"> 
       <h3 class="producto">Teclados</h3> 
-      <span class="descripcion">Los mejores teclados del mercano, de menbrana, opticos o mecanicos con gran tacto y bajo tiempo de respuesta, diferentes tipos de swich. </span>
+      <span class="descripcion descripcion-w">Los mejores teclados del mercano, de menbrana, opticos o mecanicos con gran tacto y bajo tiempo de respuesta, diferentes tipos de swich. </span>
     </div>
 
     <div class="card elementos-b"> 
       <h3 class="producto">Parlantes</h3> 
-      <span class="descripcion">Parlantes con gran potencia de bajos, calidad de sonido inigualable y gran duracion de bateria</span>
+      <span class="descripcion descripcion-b">Parlantes con gran potencia de bajos, calidad de sonido inigualable y gran duracion de bateria</span>
     </div>
 </div>
 
