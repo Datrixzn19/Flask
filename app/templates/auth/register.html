@@ -8,17 +8,18 @@
 
 {% block main %}
 
-{% with mensajes = get_flashed_messages() %}
-    {% if mensajes %}
-        <ul>
-            {% for msj in mensajes %}
-                <div class="alert alert-info" role="alert">
-                    {{ msj }}                   
-                </div> 
+<div id="msj" class="container mt-4">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
             {% endfor %}
-        </ul>
-    {% endif %}
-{% endwith %}
+        {% endif %}
+    {% endwith %}
+</div>
 
 <div class="contenedor">
     <h1>Registrarse</h1>
